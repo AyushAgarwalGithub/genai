@@ -20,11 +20,6 @@ def analyze_sentiment(text):
     sentiment = labels[scores.index(max(scores))]
     return {"label": sentiment, "score": max(scores)}
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-response_tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
-response_model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
-
 @app.route('/analyze', methods=['POST'])
 def analyze():
     data = request.json
