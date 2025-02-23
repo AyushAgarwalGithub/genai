@@ -3,5 +3,3 @@ flask_cors
 transformers
 torch
 gunicorn
-
--e .
